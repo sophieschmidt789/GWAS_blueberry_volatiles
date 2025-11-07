@@ -1,0 +1,273 @@
+Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username: lidysce
+New password:
+Retype new password:
+passwd: password updated successfully
+Installation successful!
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+lidysce@Wall-E:~$ sudo apt update
+[sudo] password for lidysce:
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu noble InRelease
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:5 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1298 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [15.0 MB]
+Get:7 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [213 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.5 kB]
+Get:9 http://security.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [9012 B]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [906 kB]
+Get:11 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [203 kB]
+Get:12 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.2 kB]
+Get:13 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [19.4 kB]
+Get:14 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2131 kB]
+Get:15 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [483 kB]
+Get:16 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:17 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 c-n-f Metadata [500 B]
+Get:18 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [27.4 kB]
+Get:19 http://security.ubuntu.com/ubuntu noble-security/multiverse Translation-en [5708 B]
+Get:20 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+Get:21 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 c-n-f Metadata [384 B]
+Ign:6 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages
+Get:22 http://archive.ubuntu.com/ubuntu noble/universe Translation-en [5982kB]
+Get:23 http://archive.ubuntu.com/ubuntu noble/universe amd64 Components [3871 kB]
+Get:24 http://archive.ubuntu.com/ubuntu noble/universe amd64 c-n-f Metadata[301 kB]
+Get:25 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [269 kB]
+Get:26 http://archive.ubuntu.com/ubuntu noble/multiverse Translation-en [118 kB]
+Get:27 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Components [35.0 kB]
+Get:28 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 c-n-f Metadata [8328 B]
+Get:29 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1581 kB]
+Get:30 http://archive.ubuntu.com/ubuntu noble-updates/main Translation-en [298 kB]
+Get:31 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components[175 kB]
+Get:32 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [15.4 kB]
+Get:33 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1498 kB]
+Get:34 http://archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [303 kB]
+Get:35 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [378 kB]
+Get:36 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [31.4 kB]
+Get:37 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2240 kB]
+Get:38 http://archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [508 kB]
+Get:39 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+Get:40 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 c-n-f Metadata [516 B]
+Get:41 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [30.3 kB]
+Get:42 http://archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [5564 B]
+Get:43 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:44 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 c-n-f Metadata [484 B]
+Get:45 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages[40.4 kB]
+Get:46 http://archive.ubuntu.com/ubuntu noble-backports/main Translation-en[9208 B]
+Get:47 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7156 B]
+Get:48 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [368 B]
+Get:49 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [28.9 kB]
+Get:50 http://archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [17.5 kB]
+Get:51 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [10.9 kB]
+Get:52 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1444 B]
+Get:53 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [212 B]
+Get:54 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:55 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Get:56 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 c-n-f Metadata [116 B]
+Get:6 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [15.0 MB]
+Fetched 24.1 MB in 36s (665 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+193 packages can be upgraded. Run 'apt list --upgradable' to see them.
+lidysce@Wall-E:~$ sudo apt install -y bcftools vcftools tabix
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libhts3t64 libhtscodecs2
+Suggested packages:
+  python3-numpy python3-matplotlib texlive-latex-recommended
+The following NEW packages will be installed:
+  bcftools libhts3t64 libhtscodecs2 tabix vcftools
+0 upgraded, 5 newly installed, 0 to remove and 193 not upgraded.
+Need to get 2230 kB of archives.
+After this operation, 7767 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libhtscodecs2 amd64 1.6.0-1build1 [98.8 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/universe amd64 libhts3t64 amd64 1.19+ds-1.1build3 [437 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/universe amd64 bcftools amd64 1.19-1build2 [791 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble/universe amd64 tabix amd64 1.19+ds-1.1build3 [510 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble/universe amd64 vcftools amd64 0.1.16-3 [393 kB]
+Fetched 2230 kB in 2s (1250 kB/s)
+Selecting previously unselected package libhtscodecs2:amd64.
+(Reading database ... 40794 files and directories currently installed.)
+Preparing to unpack .../libhtscodecs2_1.6.0-1build1_amd64.deb ...
+Unpacking libhtscodecs2:amd64 (1.6.0-1build1) ...
+Selecting previously unselected package libhts3t64:amd64.
+Preparing to unpack .../libhts3t64_1.19+ds-1.1build3_amd64.deb ...
+Unpacking libhts3t64:amd64 (1.19+ds-1.1build3) ...
+Selecting previously unselected package bcftools.
+Preparing to unpack .../bcftools_1.19-1build2_amd64.deb ...
+Unpacking bcftools (1.19-1build2) ...
+Selecting previously unselected package tabix.
+Preparing to unpack .../tabix_1.19+ds-1.1build3_amd64.deb ...
+Unpacking tabix (1.19+ds-1.1build3) ...
+Selecting previously unselected package vcftools.
+Preparing to unpack .../vcftools_0.1.16-3_amd64.deb ...
+Unpacking vcftools (0.1.16-3) ...
+Setting up libhtscodecs2:amd64 (1.6.0-1build1) ...
+Setting up vcftools (0.1.16-3) ...
+Setting up libhts3t64:amd64 (1.19+ds-1.1build3) ...
+Setting up tabix (1.19+ds-1.1build3) ...
+Setting up bcftools (1.19-1build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.3) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+lidysce@Wall-E:~$ cd /mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/L
+idysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted
+Plant Breeding/GWAS Project
+-bash: cd: too many arguments
+lidysce@Wall-E:~$ cd /mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker AssistedPlant Breeding/GWAS Project
+-bash: cd: too many arguments
+lidysce@Wall-E:~$ cd "/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/
+Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted
+ Plant Breeding/GWAS Project"
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ ls
+ Blueberry.gz   Blueberry.vcf  'VCF basic stats per line.R'   vcf2numeric.R
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ bgzip -@4 Blueberry.vcf            # creates Blueberry.vcf.gz
+tabix -p vcf Blueberry.vcf.gz
+
+^[[A
+^C
+^C
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ pwd
+/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted Plant Breeding/GWAS Project
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ ls
+ Blueberry.gz    Blueberry.vcf.gz              vcf2numeric.R
+ Blueberry.vcf  'VCF basic stats per line.R'
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ tabix -p vcf Blueberry.vcf.gz
+[W::bgzf_read_block] EOF marker is absent. The input may be truncated
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ rm Blueberry.vcf.gz
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ bgzip -@4 Blueberry.vcf
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ tabix -p vcf Blueberry.vcf.gz
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ bcftools view -h Blueberry.vcf.gz | grep "FORMAT=<ID=AD"
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ bcftools view -h Blueberry.vcf.gz | grep "##FORMAT"
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=GQ,Number=1,Type=Float,Description="Genotype Quality, the Phred-scaled marginal (or unconditional) probability of the called genotype">
+##FORMAT=<ID=GL,Number=G,Type=Float,Description="Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sampleploidy">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+##FORMAT=<ID=DPR,Number=A,Type=Integer,Description="Number of observation for each allele">
+##FORMAT=<ID=RO,Number=1,Type=Integer,Description="Reference allele observation count">
+##FORMAT=<ID=QR,Number=1,Type=Integer,Description="Sum of quality of the reference observations">
+##FORMAT=<ID=AO,Number=A,Type=Integer,Description="Alternate allele observation count">
+##FORMAT=<ID=QA,Number=A,Type=Integer,Description="Sum of quality of the alternate observations">
+##FORMAT=<ID=MIN,Number=1,Type=Integer,Description="Minimum depth in gVCF output block.">
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ bcftools query -H -f '%CHROM\t%POS\t%ID\t%REF\t%ALT[\t%RO,%AO]\n' Blueberry.vcf.gz > AD.tsv
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ head -n 3 AD.tsv | cut -f1-10
+#[1]CHROM       [2]POS  [3]ID   [4]REF  [5]ALT  [6]UFF_192502_P01_WA01:RO,[7]UFF_192502_P01_WA01:AO [8]UFF_192502_P01_WA02:RO,[9]UFF_192502_P01_WA02:AO[10]UFF_192502_P01_WA03:RO,[11]UFF_192502_P01_WA03:AO    [12]UFF_192502_P01_WA04:RO,[13]UFF_192502_P01_WA04:AO       [14]UFF_192502_P01_WA05:RO,[15]UFF_192502_P01_WA05:AO
+VaccDscaff1     65041   .       A       G       50,0    54,0    80,0    83,092,0
+VaccDscaff1     65051   .       C       T       57,0    61,0    83,0    87,097,0
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ awk -F'\t' -v OFS='\t' '
+NR==1{
+  print $1,$2,$3,$4,$5;
+  for(i=6;i<=NF;i+=2) {
+    sub(":RO","",$i);
+    printf "%s%s", $i, (i+2<=NF?OFS:ORS);
+  }
+  next
+}
+{
+  printf "%s\t%s\t%s\t%s\t%s", $1,$2,$3,$4,$5;
+  for(i=6;i<=NF;i+=2){
+    r=$i; a=$(i+1);
+    if(r=="" || a=="" || r=="." || a=="." ){ val="NA" }
+    else{
+      d=r+a;
+      if(d==0){ val="NA" }
+      else{
+        p=a/d;
+        if(p<0.25) val=0;
+        else if(p>0.75) val=2;
+        else val=1;
+      }
+    }
+    printf "%s%s", OFS, val;
+  }
+  printf "\n";
+}' AD.tsv > dosage.tsv
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidyscelidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ head -n 3 dosage.tsv | cut -f1-10
+#[1]CHROM       [2]POS  [3]ID   [4]REF  [5]ALT
+[6]UFF_192502_P01_WA01,[7]UFF_192502_P01_WA01:AO        [10]UFF_192502_P01_WA03,[11]UFF_192502_P01_WA03:AO  [14]UFF_192502_P01_WA05,[15]UFF_192502_P01_WA05:AO  [18]UFF_192502_P01_WA09,[19]UFF_192502_P01_WA09:AO      [22]UFF_192502_P01_WB01,[23]UFF_192502_P01_WB01:AO  [26]UFF_192502_P01_WB03,[27]UFF_192502_P01_WB03:AO  [30]UFF_192502_P01_WB05,[31]UFF_192502_P01_WB05:AO      [34]UFF_192502_P01_WB07,[35]UFF_192502_P01_WB07:AO  [38]UFF_192502_P01_WB09,[39]UFF_192502_P01_WB09:AO  [42]UFF_192502_P01_WB11,[43]UFF_192502_P01_WB11:AO
+VaccDscaff1     65041   .       A       G       1       1       1       1  1
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ awk -F'\t' -v OFS='\t' '
+NR==1{
+  # write site columns
+  printf "%s\t%s\t%s\t%s\t%s", $1,$2,$3,$4,$5;
+  # take every other column (the RO positions) and strip the ":RO" or ":AO"suffix
+  for(i=6;i<=NF;i+=2){
+    split($i, a, ":"); printf "%s%s", OFS, a[1];
+  }
+  printf "\n"; next
+}
+{ print }' dosage.tsv > dosage_clean.tsv
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ head -n 2 dosage_clean.tsv | cut -f1-12
+#[1]CHROM       [2]POS  [3]ID   [4]REF  [5]ALT
+[6]UFF_192502_P01_WA01,[7]UFF_192502_P01_WA01:AO        [10]UFF_192502_P01_WA03,[11]UFF_192502_P01_WA03:AO  [14]UFF_192502_P01_WA05,[15]UFF_192502_P01_WA05:AO  [18]UFF_192502_P01_WA09,[19]UFF_192502_P01_WA09:AO      [22]UFF_192502_P01_WB01,[23]UFF_192502_P01_WB01:AO  [26]UFF_192502_P01_WB03,[27]UFF_192502_P01_WB03:AO  [30]UFF_192502_P01_WB05,[31]UFF_192502_P01_WB05:AO      [34]UFF_192502_P01_WB07,[35]UFF_192502_P01_WB07:AO  [38]UFF_192502_P01_WB09,[39]UFF_192502_P01_WB09:AO  [42]UFF_192502_P01_WB11,[43]UFF_192502_P01_WB11:AO [46]UFF_192502_P01_WC01,[47]UFF_192502_P01_WC01:AO       [50]UFF_192502_P01_WC03,[51]UFF_192502_P01_WC03:AO
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ awk -F'\t' -v OFS='\t' '
+NR==1{
+  printf "%s\t%s\t%s\t%s\t%s", $1,$2,$3,$4,$5;
+  for(i=6;i<=NF;i+=2){ split($i,a,":"); printf "%s%s", OFS, a[1]; }
+  printf "\n"; next
+}
+{
+  printf "%s\t%s\t%s\t%s\t%s", $1,$2,$3,$4,$5;
+  for(i=6;i<=NF;i+=2){
+    r=$(i); a=$(i+1);
+    if(r==""||a==""||r=="."||a=="."){ val="NA" }
+    else{
+      d=r+a; if(d==0){ val="NA" }
+      else{
+        p=a/d;
+        if(p<0.25) val=0; else if(p>0.75) val=2; else val=1;
+      }
+    }
+    printf "%s%s", OFS, val;
+  }
+  printf "\n";
+}' AD.tsv > dosage_clean.tsv
+awk: cmd. line:10: (FILENAME=AD.tsv FNR=2) fatal: attempt to use array `a' in a scalar context
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ awk -F'\t' -v OFS='\t' '
+NR==1{
+  # header: keep site cols and sample names without the ":AO"/":RO"
+  printf "%s\t%s\t%s\t%s\t%s", $1,$2,$3,$4,$5;
+  for(i=6;i<=NF;i+=2){
+    split($i, arr, ":"); printf "%s%s", OFS, arr[1];
+  }
+  printf "\n"; next
+}
+{
+  # rows: convert RO,AO -> 0/1/2 using your thresholds
+  printf "%s\t%s\t%s\t%s\t%s", $1,$2,$3,$4,$5;
+  for(i=6;i<=NF;i+=2){
+    ro=$(i); ao=$(i+1);
+    if(ro==""||ao==""||ro=="."||ao=="."){ val="NA" }
+    else{
+      d=ro+ao;
+      if(d==0){ val="NA" }
+      else{
+        p=ao/d;
+        if(p<0.25) val=0; else if(p>0.75) val=2; else val=1;
+      }
+    }
+    printf "%s%s", OFS, val;
+  }
+  printf "\n";
+}' AD.tsv > dosage_clean.tsv
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ head -n 1 dosage_clean.tsv | cut -f1-12
+head -n 2 dosage_clean.tsv | tail -n 1 | cut -f1-12
+#[1]CHROM       [2]POS  [3]ID   [4]REF  [5]ALT  [6]UFF_192502_P01_WA01  [10]UFF_192502_P01_WA03     [14]UFF_192502_P01_WA05 [18]UFF_192502_P01_WA09 [22]UFF_192502_P01_WB01     [26]UFF_192502_P01_WB03 [30]UFF_192502_P01_WB05
+VaccDscaff1     65041   .       A       G       1       1       1       1  11       1
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ Breeding/GWAS Project$ head -n 1 dosage_clean.tsv | cut -f1-12
+-bash: Breeding/GWAS: No such file or directory
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ head -n 1 dosage_clean.tsv | cut -f1-12
+#[1]CHROM       [2]POS  [3]ID   [4]REF  [5]ALT  [6]UFF_192502_P01_WA01  [10]UFF_192502_P01_WA03     [14]UFF_192502_P01_WA05 [18]UFF_192502_P01_WA09 [22]UFF_192502_P01_WB01     [26]UFF_192502_P01_WB03 [30]UFF_192502_P01_WB05
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ head -n 2 dosage_clean.tsv | cut -f1-12
+#[1]CHROM       [2]POS  [3]ID   [4]REF  [5]ALT  [6]UFF_192502_P01_WA01  [10]UFF_192502_P01_WA03     [14]UFF_192502_P01_WA05 [18]UFF_192502_P01_WA09 [22]UFF_192502_P01_WB01     [26]UFF_192502_P01_WB03 [30]UFF_192502_P01_WB05
+VaccDscaff1     65041   .       A       G       1       1       1       1  11       1
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$ awk -F'\t' 'NR==1{print NF; print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10}' dosage_clean.tsv
+931
+#[1]CHROM [2]POS [3]ID [4]REF [5]ALT [6]UFF_192502_P01_WA01 [10]UFF_192502_P01_WA03 [14]UFF_192502_P01_WA05 [18]UFF_192502_P01_WA09 [22]UFF_192502_P01_WB01
+lidysce@Wall-E:/mnt/c/Users/lidys/UFL Dropbox/Lidysce Mata Cantarero/Lidysce - Heat Tolerance/Lidysce/Classes/HOS6236 - Molecular Marker Assisted PlantBreeding/GWAS Project$
