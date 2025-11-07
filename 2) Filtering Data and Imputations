@@ -1,0 +1,162 @@
+
+setwd("C:/Users/s.schmidt1/OneDrive - University of Florida/Fall 2025/HOS6362_Molc_Mark/Linkage Lounge Top Secret Work/Project_2/G Matrix Attempt")
+getwd()
+# 1) point to your diploidized TSV
+
+geno_path <- "dosage_clean.tsv"  # <-- change this
+readLines(geno_path, n = 5)
+
+# 2) read it
+geno <- read.table(geno_path, header = TRUE, sep = "\t", check.names = FALSE, quote = "", comment.char = "")
+
+# 3) basic info
+dim(geno)            # rows x cols
+names(geno)[1:10]    # first few column names
+head(geno, 2)        # peek at first rows
+
+# Clean the weird prefixes like "#[1]" or "[10]" from column names
+cn <- names(geno)
+cn <- sub("^#\\[\\d+\\]", "", cn)   # remove things like "#[1]"
+cn <- sub("^\\[\\d+\\]",  "", cn)   # remove things like "[10]"
+cn <- trimws(cn)
+names(geno) <- cn
+
+# Confirm the first few names now look normal
+names(geno)[1:10]
+
+# Check that we have the expected metadata columns
+intersect(c("CHROM","POS","ID","REF","ALT"), names(geno))
+
+# 3a) Create a compact SNP identifier
+geno$SNP_ID <- paste(geno$CHROM, geno$POS, sep = "_")
+
+# 3b) Figure out where the sample columns start (after ALT)
+sample_cols <- setdiff(names(geno), c("CHROM","POS","ID","REF","ALT","SNP_ID"))
+
+# 3c) Pull the genotype block and coerce to numeric (0/1/2/NA)
+G <- as.matrix(geno[ , sample_cols, drop = FALSE])
+mode(G) <- "numeric"
+
+# 3d) Quick sanity checks
+dim(G)                     # variants x samples
+vals <- sort(unique(as.vector(G)))
+vals[1:20]                 # peek at unique values present
+
+# 4a) Missingness per SNP (row) and per sample (column)
+snp_miss    <- rowMeans(is.na(G))
+sample_miss <- colMeans(is.na(G))
+
+# 4b) Quick summaries
+summary(snp_miss)
+summary(sample_miss)
+
+# 4c) Who are the worst samples?
+head(sort(sample_miss, decreasing = TRUE), 10)
+
+# 4d) Any weird values outside 0/1/2/NA?
+num_weird <- sum(!(G %in% c(0,1,2,NA)), na.rm = TRUE)
+num_weird
+
+# 4e) Rough count of monomorphic SNPs (all non-NA values identical)
+is_mono <- apply(G, 1, function(x){
+  ux <- unique(x[!is.na(x)])
+  length(ux) == 1
+})
+mean(is_mono)      # proportion monomorphic
+sum(is_mono)       # count monomorphic
+
+# 5a) Allele frequency (alt allele) per SNP
+p <- rowMeans(G, na.rm = TRUE) / 2  # because 0/1/2 dosages
+
+# 5b) Minor allele frequency
+maf <- pmin(p, 1 - p)
+
+# 5c) Quick summaries
+summary(p)
+summary(maf)
+
+# 5d) How many SNPs are rare (e.g., MAF < 0.01 or < 0.05)?
+sum(maf < 0.01, na.rm = TRUE)
+sum(maf < 0.05, na.rm = TRUE)
+
+# 6a) thresholds (simple, conservative)
+maf_min      <- 0.01      # keep SNPs with MAF >= 1%
+snp_miss_max <- 0.10      # drop SNPs with >10% missing
+
+# 6b) logical vector of SNPs to keep
+keep_snp <- (maf >= maf_min) & (snp_miss <= snp_miss_max)
+
+# 6c) quick counts
+sum(keep_snp)            # how many SNPs pass?
+length(keep_snp)         # total SNPs 276212
+table(keep_snp)          # TRUE vs FALSE
+
+# 7a) Subset to passing SNPs
+G_clean    <- G[keep_snp, , drop = FALSE]
+meta_clean <- geno[keep_snp, c("CHROM","POS","ID","REF","ALT","SNP_ID")]
+
+# 7b) Set row/column names for the genotype matrix
+rownames(G_clean) <- meta_clean$SNP_ID
+# (column names are already your sample IDs)
+dim(G_clean)           # check new size
+head(rownames(G_clean), 3)
+head(colnames(G_clean), 5)
+
+# 8a) Recompute MAF and missingness on G_clean
+p_clean   <- rowMeans(G_clean, na.rm = TRUE) / 2
+maf_clean <- pmin(p_clean, 1 - p_clean)
+snp_miss_clean <- rowMeans(is.na(G_clean))
+sample_miss_clean <- colMeans(is.na(G_clean))
+
+# 8b) Summaries (should look very similar to before, minus the rare/missing ones)
+summary(maf_clean)
+summary(snp_miss_clean)
+summary(sample_miss_clean)
+
+# 8c) Sanity: any duplicate SNP_IDs?
+sum(duplicated(rownames(G_clean)))
+
+#9a) Impute to fill in NAs
+G_imputed <- apply(G_clean, 1, function(x) {
+  x[is.na(x)] <- mean(x, na.rm = TRUE)  # replace NA with SNP mean
+  x
+})
+G_imputed <- t(G_imputed) #transpose back to snps x samples
+
+#9b) Save imputed SNPs x samples
+G_imputed_df <- as.data.frame(G_imputed)
+G_imputed_df$SNP_ID <- rownames(G_clean)
+G_imputed_df <- G_imputed_df[, c("SNP_ID", setdiff(names(G_imputed_df), "SNP_ID"))]
+write.table(G_imputed_df, file="G_imputed_SNPs_rows.tsv", sep="\t", quote=FALSE, row.names=FALSE)
+
+#9c) Prepare for GWAS: samples x SNPS - same for GAPIT and GWASPOLY
+G_gwaspoly <- t(G_imputed)  # samples x SNPs
+G_gwaspoly_df <- as.data.frame(G_gwaspoly)
+G_gwaspoly_df$Sample_ID <- colnames(G_clean)
+G_gwaspoly_df <- G_gwaspoly_df[, c("Sample_ID", setdiff(names(G_gwaspoly_df), "Sample_ID"))]
+
+write.table(G_gwaspoly_df, file="G_GAPIT.tsv", sep="\t", quote=FALSE, row.names=FALSE) #G matrix for GAPIT
+
+#9d) Save SNP map for GAPIT
+snp_map <- data.frame(SNP = meta_clean$SNP_ID,
+                      Chromosome = meta_clean$CHROM,
+                      Position = meta_clean$POS)
+write.table(snp_map, file="SNP_map_GAPIT.tsv", sep="\t", quote=FALSE, row.names=FALSE)
+
+#9e) Check phenotype match, looks good
+pheno <- read.csv("C:/Users/s.schmidt1/OneDrive - University of Florida/Fall 2025/HOS6362_Molc_Mark/Linkage Lounge Top Secret Work/Project_2/pheno_VOCS_cath.csv")  # adjust path
+
+if(!all(pheno$Sample_ID %in% G_gwaspoly_df$Sample_ID)){
+   warning("⚠️ Some phenotype samples missing in genotype file")
+ } else {cat("✅ All phenotype samples match genotype samples.\n")
+}
+
+
+# 10a) Save genotype matrix (0/1/2/NA); compress to keep size manageable
+out_geno <- "G_clean.tsv.gz"
+write.table(G_clean, file = gzfile(out_geno), sep = "\t", quote = FALSE, col.names = NA)
+
+# 10b) Save SNP map (for Manhattan/QQ and GWAS tools that want positions)
+out_map <- "SNP_map.tsv.gz"
+write.table(meta_clean, file = gzfile(out_map), sep = "\t", quote = FALSE, row.names = FALSE)
+
